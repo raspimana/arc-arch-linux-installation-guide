@@ -70,14 +70,15 @@ pacman -S firewalld
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
+#it didn't work
 # install paru
-sudo pacman -S --needed base-devel
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si --noconfirm
-cd ..
+#sudo pacman -S --needed base-devel
+#git clone https://aur.archlinux.org/paru.git
+#cd paru
+#makepkg -si --noconfirm
+#cd ..
 # install a Nerd Font patched version of JetBrains Mono
-paru -S nerd-fonts-jetbrains-mono
+#paru -S nerd-fonts-jetbrains-mono
 
 # For Discrete Graphics Cards
 # pacman -S --noconfirm xf86-video-amdgpu
