@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # set system time
-ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
+ln -sf /usr/share/zoneinfo/US/Pacific /etc/localtime
 hwclock --systohc
 sed -i '177s/.//' /etc/locale.gen
 locale-gen
@@ -85,13 +85,13 @@ systemctl enable firewalld
 systemctl enable acpid
 
 # add user and give priviliges
-useradd -m example-user
-echo example-user:password | chpasswd
+useradd -m rasp
+echo rasp:password | chpasswd
 
 # give user ownership for virtualization
 # usermod -aG libvirt example-user
 
-echo "example-user ALL=(ALL) ALL" >> /etc/sudoers.d/example-user
+echo "rasp ALL=(ALL) ALL" >> /etc/sudoers.d/example-user
 
 # set environment variables to use Wayland
 echo "QT_QPA_PLATFORM=wayland" >> /etc/environment
