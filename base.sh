@@ -1,9 +1,15 @@
 #!/bin/bash
 
+pacman -S nano
+
 # set system time
 ln -sf /usr/share/zoneinfo/US/Pacific /etc/localtime
 hwclock --systohc
-sed -i '177s/.//' /etc/locale.gen
+
+echo "find your locale in locale.gen, then uncomment & press ctrl+x, then y, then enter to exit"
+echo "starting nano in 10 seconds"
+sleep 10s
+nano /etc/locale.gen
 locale-gen
 
 # set keyboard layout
